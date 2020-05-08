@@ -1,0 +1,16 @@
+{
+  "name": "allohsms",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "dependencies": {
+    "cypress": "^4.5.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "./node_modules//.bin//cypress open",
+    "all": "./node_modules//.bin//cypress run"
+  },
+  "author": "klaus",
+  "license": "ISC"
+}
