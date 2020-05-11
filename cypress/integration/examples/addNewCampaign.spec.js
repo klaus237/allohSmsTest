@@ -14,26 +14,27 @@ describe('create new campaign', ()=> {
         cy.log("send Message")
         cy.sendMessage('klausCamp','klaus', 'hello')
         cy.log('confirmer')
-        cy.get('[style="background-color: #a25e0c !important;color: #fff !important;"]').click()
+        cy.get('body > mdb-modal-container > div > div > app-confirm-action > div > div.modal-body > div > button:nth-child(2)').click({force: true})
+        //cy.get('[style="background-color: #a25e0c !important;color: #fff !important;"]').click()
         
     })
 
-    it('Send sms with  expediteur name  char > 8 ',()=>{
+//     it('Send sms with  expediteur name  caractères > 8 ',()=>{
         
-        cy.get('body > app-root > app-main-pages > div > div:nth-child(2) > div.container > app-history > div:nth-child(2) > app-new-campaign > div > app-new-campaign-from-directory > div > div > form > div:nth-child(2) > div > angular2-multiselect > div > div.selected-list > div > div > div > span.c-label.ng-star-inserted > span').contains('650044824')
-        cy.log("send Message")
-        cy.sendMessage('klausCamp','venderlich', 'hello')
-        cy.get('#toast-container').contains("Le nom de l'expediteur doit etre inferieur à 8 caractères")
+//         cy.get('body > app-root > app-main-pages > div > div:nth-child(2) > div.container > app-history > div:nth-child(2) > app-new-campaign > div > app-new-campaign-from-directory > div > div > form > div:nth-child(2) > div > angular2-multiselect > div > div.selected-list > div > div > div > span.c-label.ng-star-inserted > span').contains('650044824')
+//         cy.log("send Message")
+//         cy.sendMessage('klausCamp','venderlich', 'hello')
+//         cy.get('#toast-container').contains("Le nom de l'expediteur doit etre inferieur à 8 caractères")
 
-    })
+//     })
 
    it('Send sms with missing sms ',()=>{
         
         cy.log("NO sms")
         cy.get('div.main-page div.container div.main-directory-container:nth-child(2) div.container.send-sms-container.z-depth-1 form.form.send-sms-form.ng-untouched.ng-pristine.ng-invalid div.ng-autocomplete.md-form:nth-child(3) ng-autocomplete.ng-autocomplete.ng-untouched.ng-pristine.ng-invalid div.autocomplete-container div.input-container:nth-child(1) > input.ng-untouched.ng-pristine.ng-valid').type('campaignName')
         cy.get('div.main-page div.container div.main-directory-container:nth-child(2) div.container.send-sms-container.z-depth-1 form.form.send-sms-form.ng-untouched.ng-invalid.ng-dirty div.ng-autocomplete.md-form:nth-child(4) ng-autocomplete.ng-autocomplete.ng-untouched.ng-pristine.ng-invalid div.autocomplete-container div.input-container:nth-child(1) > input.ng-untouched.ng-pristine.ng-valid').type('sender')
-        cy.get('[style="display: flex;width: 100%;"] > :nth-child(4)').click()
-        cy.get('#toast-container').contains('Entrées invalides ou incomplete')
+        cy.get('[style="display: flex;width: 100%;"] > :nth-child(3)').click()
+        cy.get('.toast-error').contains('Entrées invalides ou incomplete')
         
     })
 
@@ -63,16 +64,7 @@ describe('create new campaign', ()=> {
         
     // })
 
-    //  it('cancel campaign',()=>{
-        
-    //     cy.log("send Message")
-    //     cy.get('div.main-page div.container div.main-directory-container:nth-child(2) div.container.send-sms-container.z-depth-1 form.form.send-sms-form.ng-untouched.ng-pristine.ng-invalid div.ng-autocomplete.md-form:nth-child(3) ng-autocomplete.ng-autocomplete.ng-untouched.ng-pristine.ng-invalid div.autocomplete-container div.input-container:nth-child(1) > input.ng-untouched.ng-pristine.ng-valid').type('klausCamp')
-    //     cy.get('div.main-page div.container div.main-directory-container:nth-child(2) div.container.send-sms-container.z-depth-1 form.form.send-sms-form.ng-untouched.ng-invalid.ng-dirty div.ng-autocomplete.md-form:nth-child(4) ng-autocomplete.ng-autocomplete.ng-untouched.ng-pristine.ng-invalid div.autocomplete-container div.input-container:nth-child(1) > input.ng-untouched.ng-pristine.ng-valid').type('klaus')
-    //     cy.get('[id=textarea]').type('hello') 
-    //     cy.get('[style="display: flex;width: 100%;"] > :nth-child(1)').click()// click on cancel button
-    //     cy.get('body > app-root > app-main-pages > div > div:nth-child(2) > div.container > app-history > div:nth-child(2) > app-new-campaign > div > app-new-campaign-from-directory > div > div > form > div:nth-child(2) > div > angular2-multiselect > div > div.selected-list > div > div > div > span.c-label.ng-star-inserted > span').should('be.empty')
-        
-    // })
+   
 
     
 })
