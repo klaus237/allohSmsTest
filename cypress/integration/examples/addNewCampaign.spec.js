@@ -37,6 +37,8 @@ describe('create new campaign', ()=> {
         
     })
 
+
+
         it('Plan campaign',()=>{
              
              cy.planCampaign('klausCamp','klaus', 'hello') 
@@ -52,25 +54,25 @@ describe('create new campaign', ()=> {
             
         })
 
-    it('Cancel campaign',()=>{
+    // it('Cancel campaign',()=>{
         
-        cy.log("plan campaign")
-        cy.planCampaign('klausCamp','klaus', 'hello')
-        cy.get('div.main-page div.container div.main-directory-container:nth-child(2) div.container.send-sms-container.z-depth-1 div:nth-child(2) form.form.send-sms-form.ng-untouched.ng-pristine.ng-invalid div.md-form:nth-child(7) > button.form-control.btn-primary.btn-submit.btn:nth-child(1)').click()// click on cancel button
-        cy.get('body > app-root > app-main-pages > div > div:nth-child(2) > div.container > app-history > div:nth-child(2) > app-new-campaign > div > app-new-campaign-from-directory > div > div > form > div:nth-child(2) > div > angular2-multiselect > div > div.selected-list > div > div > div > span.c-label.ng-star-inserted > span').should('be.empty')
+    //     cy.log("plan campaign")
+    //     cy.planCampaign('klausCamp','klaus', 'hello')
+    //     cy.get('div.main-page div.container div.main-directory-container:nth-child(2) div.container.send-sms-container.z-depth-1 div:nth-child(2) form.form.send-sms-form.ng-untouched.ng-pristine.ng-invalid div.md-form:nth-child(7) > button.form-control.btn-primary.btn-submit.btn:nth-child(1)').click()// click on cancel button
+    //     cy.get('body > app-root > app-main-pages > div > div:nth-child(2) > div.container > app-history > div:nth-child(2) > app-new-campaign > div > app-new-campaign-from-directory > div > div > form > div:nth-child(2) > div > angular2-multiselect > div > div.selected-list > div > div > div > span.c-label.ng-star-inserted > span').should('be.empty')
         
-    })
+    // })
 
-     it('cancel campaign',()=>{
+    //  it('cancel campaign',()=>{
         
-        cy.log("send Message")
-        cy.get('div.main-page div.container div.main-directory-container:nth-child(2) div.container.send-sms-container.z-depth-1 form.form.send-sms-form.ng-untouched.ng-pristine.ng-invalid div.ng-autocomplete.md-form:nth-child(3) ng-autocomplete.ng-autocomplete.ng-untouched.ng-pristine.ng-invalid div.autocomplete-container div.input-container:nth-child(1) > input.ng-untouched.ng-pristine.ng-valid').type('klausCamp')
-        cy.get('div.main-page div.container div.main-directory-container:nth-child(2) div.container.send-sms-container.z-depth-1 form.form.send-sms-form.ng-untouched.ng-invalid.ng-dirty div.ng-autocomplete.md-form:nth-child(4) ng-autocomplete.ng-autocomplete.ng-untouched.ng-pristine.ng-invalid div.autocomplete-container div.input-container:nth-child(1) > input.ng-untouched.ng-pristine.ng-valid').type('klaus')
-        cy.get('[id=textarea]').type('hello') 
-        cy.get('[style="display: flex;width: 100%;"] > :nth-child(1)').click()// click on cancel button
-        cy.get('body > app-root > app-main-pages > div > div:nth-child(2) > div.container > app-history > div:nth-child(2) > app-new-campaign > div > app-new-campaign-from-directory > div > div > form > div:nth-child(2) > div > angular2-multiselect > div > div.selected-list > div > div > div > span.c-label.ng-star-inserted > span').should('be.empty')
+    //     cy.log("send Message")
+    //     cy.get('div.main-page div.container div.main-directory-container:nth-child(2) div.container.send-sms-container.z-depth-1 form.form.send-sms-form.ng-untouched.ng-pristine.ng-invalid div.ng-autocomplete.md-form:nth-child(3) ng-autocomplete.ng-autocomplete.ng-untouched.ng-pristine.ng-invalid div.autocomplete-container div.input-container:nth-child(1) > input.ng-untouched.ng-pristine.ng-valid').type('klausCamp')
+    //     cy.get('div.main-page div.container div.main-directory-container:nth-child(2) div.container.send-sms-container.z-depth-1 form.form.send-sms-form.ng-untouched.ng-invalid.ng-dirty div.ng-autocomplete.md-form:nth-child(4) ng-autocomplete.ng-autocomplete.ng-untouched.ng-pristine.ng-invalid div.autocomplete-container div.input-container:nth-child(1) > input.ng-untouched.ng-pristine.ng-valid').type('klaus')
+    //     cy.get('[id=textarea]').type('hello') 
+    //     cy.get('[style="display: flex;width: 100%;"] > :nth-child(1)').click()// click on cancel button
+    //     cy.get('body > app-root > app-main-pages > div > div:nth-child(2) > div.container > app-history > div:nth-child(2) > app-new-campaign > div > app-new-campaign-from-directory > div > div > form > div:nth-child(2) > div > angular2-multiselect > div > div.selected-list > div > div > div > span.c-label.ng-star-inserted > span').should('be.empty')
         
-    })
+    // })
 
     
 })

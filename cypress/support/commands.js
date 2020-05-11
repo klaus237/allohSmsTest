@@ -72,7 +72,7 @@ Cypress.Commands.add("login",(username,password)=>{
 Cypress.Commands.add("newContact",(number,ville,sexe,nom,age)=>{
     
     //cy.get('')
-    cy.get('[href="#/admin/history/new-sms"]', { timeout: 80000 })
+    cy.get('[href="#/admin/history/new-sms"]', { timeout: 70000 })
       .should('be.visible').click() // click on nouvelle campagne
     cy.get('body > app-root > app-main-pages > div > div:nth-child(2) > div.container > app-history > div.main-directory-container.ng-star-inserted > app-new-campaign > div > app-new-campaign-from-directory > div > div > form > div:nth-child(1) > button').click() // click on nouveau contact
     cy.get('[id=number]').type(number)
@@ -87,8 +87,9 @@ Cypress.Commands.add("sendMessage",(campaignName,sender,sms)=>{
     
         cy.get('div.main-page div.container div.main-directory-container:nth-child(2) div.container.send-sms-container.z-depth-1 form.form.send-sms-form.ng-untouched.ng-pristine.ng-invalid div.ng-autocomplete.md-form:nth-child(3) ng-autocomplete.ng-autocomplete.ng-untouched.ng-pristine.ng-invalid div.autocomplete-container div.input-container:nth-child(1) > input.ng-untouched.ng-pristine.ng-valid').type(campaignName)
         cy.get('div.main-page div.container div.main-directory-container:nth-child(2) div.container.send-sms-container.z-depth-1 form.form.send-sms-form.ng-untouched.ng-invalid.ng-dirty div.ng-autocomplete.md-form:nth-child(4) ng-autocomplete.ng-autocomplete.ng-untouched.ng-pristine.ng-invalid div.autocomplete-container div.input-container:nth-child(1) > input.ng-untouched.ng-pristine.ng-valid').type(sender)
-        cy.get('[id=textarea]').type(sms) 
-        cy.get('[style="display: flex;width: 100%;"] > :nth-child(4)').click() //click sur envoyer
+        cy.get('[id=textarea]').type(sms)
+       // cy.get('app-main-pages.ng-star-inserted:nth-child(2) div.main-page div.container app-history.ng-star-inserted:nth-child(2) div.main-directory-container.ng-star-inserted:nth-child(2) div.ng-star-inserted app-new-campaign-from-directory.ng-star-inserted:nth-child(2) div.container.send-sms-container.z-depth-1 div:nth-child(2) form.form.send-sms-form.ng-untouched.ng-pristine.ng-invalid.ng-star-inserted div.md-form:nth-child(7) > button.form-control.btn-primary.btn-submit.btn:nth-child(3)').click() 
+        cy.get('[style="display: flex;width: 100%;"] > :nth-child(3)').click() //click sur envoyer
         //cy.get('body > app-root > app-main-pages > div > div:nth-child(2) > div.container > app-history > div:nth-child(2) > app-new-campaign > div > app-new-campaign-from-directory > div > div > form > div:nth-child(7) > button.form-control.btn-primary.btn-submit.btn.waves-effect').click()
 
 })
@@ -99,6 +100,7 @@ Cypress.Commands.add("planCampaign",(campaignName,sender,sms)=>{
     cy.get('div.main-page div.container div.main-directory-container:nth-child(2) div.container.send-sms-container.z-depth-1 form.form.send-sms-form.ng-untouched.ng-invalid.ng-dirty div.ng-autocomplete.md-form:nth-child(4) ng-autocomplete.ng-autocomplete.ng-untouched.ng-pristine.ng-invalid div.autocomplete-container div.input-container:nth-child(1) > input.ng-untouched.ng-pristine.ng-valid').type(sender)
     cy.get('[id=textarea]').type(sms) 
     cy.get('[style="display: flex;width: 100%;"] > :nth-child(3)').click()
+    cy.get('[style="background-color: #a25e0c !important;color: #fff !important;"]').click()
     //cy.get('div.main-page div.container div.main-directory-container:nth-child(2) div.container.send-sms-container.z-depth-1 div:nth-child(2) form.form.send-sms-form.ng-dirty.ng-touched.ng-valid div.md-form:nth-child(7) > button.form-control.btn-primary.btn-submit.btn:nth-child(3)').click() //click sur planifier
     //cy.get('body > app-root > app-main-pages > div > div:nth-child(2) > div.container > app-history > div:nth-child(2) > app-new-campaign > div > app-new-campaign-from-directory > div > div > form > div:nth-child(7) > button.form-control.btn-primary.btn-submit.btn.waves-effect').click()
 

@@ -14,11 +14,11 @@ describe('Address Book', ()=> {
          .click()  //click sur nouveau groupe
 
       cy.get('#groupName').type('VIP')
-
+      
       cy.get('.form > :nth-child(2) > .form-control')
         .click() //click sur creer ce groupe
        
-      cy.get('#toast-container').contains('groupe crée')
+      cy.get('#toast-container').contains('Creation du groupe effectuée avec succèss')
 
       //verification
 

@@ -11,15 +11,11 @@ describe('save campaign', ()=> {
         cy.log("save Message")
         cy.saveMessage('klausCamp','klaus', 'hello')
 
-        cy.log('check  campaign name ')
+        cy.log('check if  campaign name exist in the list')
         cy.get('tbody > :nth-child(1) > :nth-child(2)')
           .contains('klausCamp')
 
-        cy.log('check  sender name')
-        cy.get('tbody > :nth-child(1) > :nth-child(3)').should('be.visible').contains('klaus')
-
-        cy.log('check  sender name')
-        cy.get('tbody > :nth-child(1) > :nth-child(3)').should('be.visible')
+       
         
     })
 })
